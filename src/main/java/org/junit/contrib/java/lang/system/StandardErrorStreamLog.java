@@ -44,10 +44,15 @@ import org.junit.contrib.java.lang.system.internal.PrintStreamLog;
  * <pre>
  * &#064;Rule
  * public final StandardErrorStreamLog log = new StandardErrorStreamLog(LOG_ONLY);</pre>
+ *
+ * @deprecated Please use {@link SystemErrRule}.
  */
+@Deprecated
 public class StandardErrorStreamLog extends PrintStreamLog {
 	/**
-	 * Creates a rule that records writes while they are still written to the
+	 * @deprecated Please use
+	 * {@link SystemErrRule#enableLog() new SystemErrRule().enableLog()}.
+	 * <p>Creates a rule that records writes while they are still written to the
 	 * standard error stream.
 	 */
 	public StandardErrorStreamLog() {
@@ -55,8 +60,14 @@ public class StandardErrorStreamLog extends PrintStreamLog {
 	}
 
 	/**
-	 * Creates a rule that records writes to the standard error stream according
-	 * to the specified {@code LogMode}.
+	 * @deprecated Please use
+	 * {@link SystemErrRule#enableLog() new SystemErrRule().enableLog()}
+	 * instead of
+	 * {@code new StandardErrorStreamLog(LogMode.LOG_AND_WRITE_TO_STREAM)} or
+	 * {@link SystemErrRule#enableLog() new SystemErrRule().enableLog()}.{@link SystemErrRule#mute() mute()}
+	 * instead of {@code new StandardErrorStreamLog(LogMode.LOG_ONLY)}.
+	 * <p>Creates a rule that records writes to the standard error stream
+	 * according to the specified {@code LogMode}.
 	 *
 	 * @param mode how the rule handles writes to the standard error stream.
 	 * @throws java.lang.NullPointerException if {@code mode} is null.

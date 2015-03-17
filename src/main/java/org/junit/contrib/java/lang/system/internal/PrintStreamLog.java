@@ -51,7 +51,11 @@ public abstract class PrintStreamLog implements TestRule {
 
 	/**
 	 * Clears the log. The log can be used again.
+	 * @deprecated Please use
+	 * {@link org.junit.contrib.java.lang.system.SystemErrRule#clearLog()} or
+	 * {@link org.junit.contrib.java.lang.system.SystemOutRule#clearLog()}.
 	 */
+	@Deprecated
 	public void clear() {
 		log.reset();
 	}
@@ -60,7 +64,11 @@ public abstract class PrintStreamLog implements TestRule {
 	 * Returns the text written to the standard error stream.
 	 *
 	 * @return the text written to the standard error stream.
+	 * @deprecated Please use
+	 * {@link org.junit.contrib.java.lang.system.SystemErrRule#getLog()} ()} or
+	 * {@link org.junit.contrib.java.lang.system.SystemOutRule#getLog()}.
 	 */
+	@Deprecated
 	public String getLog() {
 		try {
 			return log.toString(ENCODING);

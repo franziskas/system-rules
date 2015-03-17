@@ -43,18 +43,29 @@ import org.junit.contrib.java.lang.system.internal.PrintStreamLog;
  * <pre>
  * &#064;Rule
  * public final StandardOutputStreamLog log = new StandardOutputStreamLog(LOG_ONLY);</pre>
+ *
+ * @deprecated Please use {@link SystemOutRule}.
  */
+@Deprecated
 public class StandardOutputStreamLog extends PrintStreamLog {
 	/**
-	 * Creates a rule that records writes while they are still written to the
-	 * standard output stream.
+	 * @deprecated Please use
+	 * {@link SystemOutRule#enableLog() new SystemOutRule().enableLog()}.
+	 * <p>Creates a rule that records writes while they are still written to
+	 * the standard output stream.
 	 */
 	public StandardOutputStreamLog() {
 		this(LOG_AND_WRITE_TO_STREAM);
 	}
 
 	/**
-	 * Creates a rule that records writes to the standard output stream
+	 * @deprecated Please use
+	 * {@link SystemOutRule#enableLog() new SystemOutRule().enableLog()}
+	 * instead of
+	 * {@code new StandardOutputStreamLog(LogMode.LOG_AND_WRITE_TO_STREAM)} or
+	 * {@link SystemOutRule#enableLog() new SystemOutRule().enableLog()}.{@link SystemOutRule#mute() mute()}
+	 * instead of {@code new StandardOutputStreamLog(LogMode.LOG_ONLY)}.
+	 * <p>Creates a rule that records writes to the standard output stream
 	 * according to the specified {@code LogMode}.
 	 *
 	 * @param mode how the rule handles writes to the standard output stream.
